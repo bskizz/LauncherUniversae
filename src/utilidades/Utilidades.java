@@ -119,39 +119,63 @@ public class Utilidades extends javax.swing.JFrame {
                 newHeight = (int) (labelWidth / aspectRatio);
             }
         }
-
         Icon icon = new ImageIcon(originalImage.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH));
         labelName.setIcon(icon);
         labelName.repaint();
     }
-//    public static void setLabelImage(JLabel labelName, String root, boolean keepProportions) {
-//        //label a la que queremos colocarle la imagen//ruta de la imagen
-//        //Declaramos un objeto de tipo Image Icon y de parametro le pasamos la ruta de nuestra imagen
-//        ImageIcon image = new ImageIcon(root);
-//
-//        if (labelName.getWidth() == 0 || labelName.getHeight() == 0) {
-//            SwingUtilities.invokeLater(() -> setLabelImage(labelName, root, keepProportions));
-//            return;
-//        }
-//        // Calcular proporciones manteniendo la relación de aspecto
-//        if (keepProportions) {
-//            double imageWidth = image.getIconWidth();
-//            double imageHeight = image.getIconHeight();
-//            double labelWidth = labelName.getWidth();
-//            double labelHeight = labelName.getHeight();
-//
-//            double scale = Math.min(labelWidth / imageWidth, labelHeight / imageHeight);
-//            int newWidth = (int) (imageWidth * scale);
-//            int newHeight = (int) (imageHeight * scale);
-//
-//            Icon icon = new ImageIcon(image.getImage().getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH));
-//            labelName.setIcon(icon);
-//        } else {
-//            // Escalar directamente al tamaño del JLabel, sin mantener proporciones
-//            Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_SMOOTH));
-//            labelName.setIcon(icon);
-//        }
-//    }
+
+//    Metodo [2-3] sobrecargado para asignar imageen a un label, añadiendo el tamaño del tamaño de la imagen en el interior del label a tipo de porcentaje (0.9 -> 90% tamaño del label)
+    public static void setLabelImage(JLabel labelName, String root, boolean keepProportions, double escala) {
+
+        try {
+            if (labelName.getWidth() == 0 || labelName.getHeight() == 0) {
+                labelName.addAncestorListener(new javax.swing.event.AncestorListener() {
+                    @Override
+                    public void ancestorAdded(javax.swing.event.AncestorEvent event) {
+                        SwingUtilities.invokeLater(() -> {
+                            Utilidades.setLabelImage(labelName, root, keepProportions, escala);
+                        });
+                        labelName.removeAncestorListener(this);
+                    }
+
+                    @Override
+                    public void ancestorRemoved(javax.swing.event.AncestorEvent event) {
+                    }
+
+                    @Override
+                    public void ancestorMoved(javax.swing.event.AncestorEvent event) {
+                    }
+                });
+                return;
+            }
+
+            ImageIcon image = new ImageIcon(root);
+            Image originalImage = image.getImage();
+
+            int labelWidth = labelName.getWidth();
+            int labelHeight = labelName.getHeight();
+
+            int newWidth = labelWidth;
+            int newHeight = labelHeight;
+
+            if (keepProportions) {
+                int originalWidth = originalImage.getWidth(null);
+                int originalHeight = originalImage.getHeight(null);
+
+                double aspectRatio = (double) originalWidth / originalHeight;
+
+                if (labelWidth / (double) labelHeight > aspectRatio) {
+                    newWidth = (int) (labelHeight * aspectRatio);
+                } else {
+                    newHeight = (int) (labelWidth / aspectRatio);
+                }
+            }
+            Icon icon = new ImageIcon(originalImage.getScaledInstance((int) (newWidth * escala), (int) (newHeight * escala), Image.SCALE_SMOOTH));
+            labelName.setIcon(icon);
+            labelName.repaint();
+        } catch (Exception e) {
+        }
+    }
 
     //Metodo [2-3] sobrecargado para asignar imageen a un label, con la opcion booleana de conerbar las proporciones de tamaño --> Aqui el tamaño sera indicado con [Dimension newDimension = new Dimension(width, height);]
     public static void setLabelImage(JLabel labelName, String root, boolean keepProportions, Dimension dimension) {
@@ -226,39 +250,58 @@ public class Utilidades extends javax.swing.JFrame {
     }
 
     // Método [7] para agregar efecto HOVER
-    public static void addHoverEffect(JLabel label, String imagePath) {
-        final ImageIcon originalIcon = new ImageIcon(imagePath);
-
-        label.setIcon(originalIcon);
-
-        // MouseListener
-        label.addMouseListener(new java.awt.event.MouseAdapter() {
-            // 1.1 = 10% más grande
-            private final double scaleFactor = 1.1;
-
-            @Override
-            public void mouseEntered(java.awt.event.MouseEvent e) {
-                int width = label.getWidth();
-                int height = label.getHeight();
-                
-                if (width == 0 || height == 0) {
-                    width = originalIcon.getIconWidth();
-                    height = originalIcon.getIconHeight();
+    public static void addHoverEffect(JLabel label, String imagePath, double escala) {
+        if (label.getWidth() == 0 || label.getHeight() == 0) {
+            label.addAncestorListener(new javax.swing.event.AncestorListener() {
+                @Override
+                public void ancestorAdded(javax.swing.event.AncestorEvent event) {
+                    SwingUtilities.invokeLater(() -> {
+                        addHoverEffect(label, imagePath, escala);
+                    });
+                    label.removeAncestorListener(this);
                 }
 
-                int newWidth = (int) (width * scaleFactor);
-                int newHeight = (int) (height * scaleFactor);
+                @Override
+                public void ancestorRemoved(javax.swing.event.AncestorEvent event) {
+                }
 
-                Image scaledImage = originalIcon.getImage().getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
-                label.setIcon(new ImageIcon(scaledImage));
+                @Override
+                public void ancestorMoved(javax.swing.event.AncestorEvent event) {
+                }
+            });
+            return;
+        }
 
+        final ImageIcon originalIcon = new ImageIcon(imagePath);
+
+        int labelWidth = label.getWidth();
+        int labelHeight = label.getHeight();
+
+        double baseScale = escala;
+        int baseWidth = (int) (labelWidth * baseScale);
+        int baseHeight = (int) (labelHeight * baseScale);
+        final ImageIcon baseScaledIcon = new ImageIcon(
+                originalIcon.getImage().getScaledInstance(baseWidth, baseHeight, Image.SCALE_SMOOTH));
+
+        // Escala completa (hover): 100% del tamaño del label
+        final ImageIcon fullScaledIcon = new ImageIcon(
+                originalIcon.getImage().getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH));
+
+        // Asignamos el icono base escalado
+        label.setIcon(baseScaledIcon);
+
+        // Agregamos el MouseListener para cambiar entre escalas
+        label.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+                label.setIcon(fullScaledIcon);
                 label.revalidate();
                 label.repaint();
             }
 
             @Override
             public void mouseExited(java.awt.event.MouseEvent e) {
-                label.setIcon(originalIcon);
+                label.setIcon(baseScaledIcon);
                 label.revalidate();
                 label.repaint();
             }

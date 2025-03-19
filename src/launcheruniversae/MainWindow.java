@@ -32,8 +32,6 @@ public class MainWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelBgImage = new javax.swing.JLabel();
-        content = new javax.swing.JPanel();
         topIcons = new javax.swing.JPanel();
         icoTop1 = new javax.swing.JLabel();
         icoTop2 = new javax.swing.JLabel();
@@ -49,6 +47,8 @@ public class MainWindow extends javax.swing.JFrame {
         icoTop12 = new javax.swing.JLabel();
         icoTop13 = new javax.swing.JLabel();
         icoTop14 = new javax.swing.JLabel();
+        content = new javax.swing.JPanel();
+        labelBgImage = new javax.swing.JLabel();
 
         setTitle("Universae");
         setAlwaysOnTop(true);
@@ -60,27 +60,6 @@ public class MainWindow extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelBgImage.setBackground(new java.awt.Color(10, 38, 72));
-        labelBgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/launcheruniversae/img/Fondo base.png"))); // NOI18N
-        getContentPane().add(labelBgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1090));
-
-        content.setBackground(new java.awt.Color(10, 38, 72));
-        content.setMaximumSize(new java.awt.Dimension(1430, 730));
-        content.setMinimumSize(new java.awt.Dimension(1430, 730));
-
-        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
-        content.setLayout(contentLayout);
-        contentLayout.setHorizontalGroup(
-            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1430, Short.MAX_VALUE)
-        );
-        contentLayout.setVerticalGroup(
-            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 1430, 730));
-
         topIcons.setOpaque(false);
         topIcons.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 5));
 
@@ -90,7 +69,6 @@ public class MainWindow extends javax.swing.JFrame {
         icoTop1.setMaximumSize(new java.awt.Dimension(80, 80));
         icoTop1.setMinimumSize(new java.awt.Dimension(80, 80));
         icoTop1.setName(""); // NOI18N
-        icoTop1.setOpaque(true);
         icoTop1.setPreferredSize(new java.awt.Dimension(80, 80));
         topIcons.add(icoTop1);
 
@@ -174,6 +152,28 @@ public class MainWindow extends javax.swing.JFrame {
 
         getContentPane().add(topIcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 93, 1553, -1));
 
+        content.setBackground(new java.awt.Color(10, 38, 72));
+        content.setMaximumSize(new java.awt.Dimension(1430, 730));
+        content.setMinimumSize(new java.awt.Dimension(1430, 730));
+
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1430, Short.MAX_VALUE)
+        );
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 730, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 1430, 730));
+
+        labelBgImage.setBackground(new java.awt.Color(10, 38, 72));
+        labelBgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/launcheruniversae/img/Fondo base.png"))); // NOI18N
+        labelBgImage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(labelBgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
+
         getAccessibleContext().setAccessibleDescription("Launcher Universae");
 
         pack();
@@ -214,20 +214,33 @@ public class MainWindow extends javax.swing.JFrame {
     private void asignarImagenesEstaticas(){
         Utilidades.setLabelImage(labelBgImage, "src/launcheruniversae/img/Fondo base.png", true);
         Utilidades.setLabelImage(icoTop1, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop2, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop3, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop4, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop5, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop6, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop7, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop8, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop9, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop10, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop11, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop12, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop13, "src/launcheruniversae/img/LauncherButton0.png", true);
-        Utilidades.setLabelImage(icoTop14, "src/launcheruniversae/img/LauncherButton0.png", true);
-//        Utilidades.addHoverEffect(icoTop1, "src/launcheruniversae/img/LauncherButton0.png");
+        Utilidades.setLabelImage(icoTop2, "src/launcheruniversae/img/LauncherButton1.png", true);
+        Utilidades.setLabelImage(icoTop3, "src/launcheruniversae/img/LauncherButton2.png", true);
+        Utilidades.setLabelImage(icoTop4, "src/launcheruniversae/img/LauncherButton3.png", true);
+        Utilidades.setLabelImage(icoTop5, "src/launcheruniversae/img/LauncherButton4.png", true);
+        Utilidades.setLabelImage(icoTop6, "src/launcheruniversae/img/LauncherButton5.png", true);
+        Utilidades.setLabelImage(icoTop7, "src/launcheruniversae/img/LauncherButton6.png", true);
+        Utilidades.setLabelImage(icoTop8, "src/launcheruniversae/img/LauncherButton7.png", true);
+        Utilidades.setLabelImage(icoTop9, "src/launcheruniversae/img/LauncherButton8.png", true);
+        Utilidades.setLabelImage(icoTop10, "src/launcheruniversae/img/LauncherButton9.png", true);
+        Utilidades.setLabelImage(icoTop11, "src/launcheruniversae/img/LauncherButton10.png", true);
+        Utilidades.setLabelImage(icoTop12, "src/launcheruniversae/img/LauncherButton11.png", true);
+        Utilidades.setLabelImage(icoTop13, "src/launcheruniversae/img/LauncherButton12.png", true);
+        Utilidades.setLabelImage(icoTop14, "src/launcheruniversae/img/LauncherButton13.png", true);
+        Utilidades.addHoverEffect(icoTop1, "src/launcheruniversae/img/LauncherButton0.png", 0.9);
+        Utilidades.addHoverEffect(icoTop2, "src/launcheruniversae/img/LauncherButton1.png", 0.9);
+        Utilidades.addHoverEffect(icoTop3, "src/launcheruniversae/img/LauncherButton2.png", 0.9);
+        Utilidades.addHoverEffect(icoTop4, "src/launcheruniversae/img/LauncherButton3.png", 0.9);
+        Utilidades.addHoverEffect(icoTop5, "src/launcheruniversae/img/LauncherButton4.png", 0.9);
+        Utilidades.addHoverEffect(icoTop6, "src/launcheruniversae/img/LauncherButton5.png", 0.9);
+        Utilidades.addHoverEffect(icoTop7, "src/launcheruniversae/img/LauncherButton6.png", 0.9);
+        Utilidades.addHoverEffect(icoTop8, "src/launcheruniversae/img/LauncherButton7.png", 0.9);
+        Utilidades.addHoverEffect(icoTop9, "src/launcheruniversae/img/LauncherButton8.png", 0.9);
+        Utilidades.addHoverEffect(icoTop10, "src/launcheruniversae/img/LauncherButton9.png", 0.9);
+        Utilidades.addHoverEffect(icoTop11, "src/launcheruniversae/img/LauncherButton10.png", 0.9);
+        Utilidades.addHoverEffect(icoTop12, "src/launcheruniversae/img/LauncherButton11.png", 0.9);
+        Utilidades.addHoverEffect(icoTop13, "src/launcheruniversae/img/LauncherButton12.png", 0.9);
+        Utilidades.addHoverEffect(icoTop14, "src/launcheruniversae/img/LauncherButton13.png", 0.9);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

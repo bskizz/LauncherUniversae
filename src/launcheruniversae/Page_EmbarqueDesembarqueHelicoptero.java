@@ -5,9 +5,9 @@ package launcheruniversae;
  *
  * @author Víctor Arroyo
  */
-public class Page2 extends javax.swing.JPanel {
+public class Page_EmbarqueDesembarqueHelicoptero extends javax.swing.JPanel {
 
-    public Page2() {
+    public Page_EmbarqueDesembarqueHelicoptero() {
         initComponents();
     }
 
