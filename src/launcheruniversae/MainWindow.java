@@ -1,6 +1,7 @@
 package launcheruniversae;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import utilidades.Utilidades;
@@ -17,9 +18,9 @@ public class MainWindow extends javax.swing.JFrame {
     public MainWindow() {
         initComponents();
 //        this.setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-        Utilidades.setLabelImage(labelBgImage, "src/launcheruniversae/img/Fondo base.png", true);
-        Utilidades.showPanel(pagina1, contenedorPaginas);
         
+        Utilidades.showPanel(pagina1, content);
+        asignarImagenesEstaticas();
     }
 
     /**
@@ -31,9 +32,23 @@ public class MainWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        content = new javax.swing.JPanel();
         labelBgImage = new javax.swing.JLabel();
-        contenedorPaginas = new javax.swing.JPanel();
+        content = new javax.swing.JPanel();
+        topIcons = new javax.swing.JPanel();
+        icoTop1 = new javax.swing.JLabel();
+        icoTop2 = new javax.swing.JLabel();
+        icoTop3 = new javax.swing.JLabel();
+        icoTop4 = new javax.swing.JLabel();
+        icoTop5 = new javax.swing.JLabel();
+        icoTop6 = new javax.swing.JLabel();
+        icoTop7 = new javax.swing.JLabel();
+        icoTop8 = new javax.swing.JLabel();
+        icoTop9 = new javax.swing.JLabel();
+        icoTop10 = new javax.swing.JLabel();
+        icoTop11 = new javax.swing.JLabel();
+        icoTop12 = new javax.swing.JLabel();
+        icoTop13 = new javax.swing.JLabel();
+        icoTop14 = new javax.swing.JLabel();
 
         setTitle("Universae");
         setAlwaysOnTop(true);
@@ -43,40 +58,121 @@ public class MainWindow extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         setResizable(false);
         setSize(new java.awt.Dimension(1920, 1080));
-
-        content.setBackground(new java.awt.Color(10, 38, 72));
-        content.setMaximumSize(new java.awt.Dimension(1920, 1080));
-        content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelBgImage.setBackground(new java.awt.Color(10, 38, 72));
         labelBgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/launcheruniversae/img/Fondo base.png"))); // NOI18N
-        content.add(labelBgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1090));
+        getContentPane().add(labelBgImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1090));
 
-        contenedorPaginas.setBackground(new java.awt.Color(10, 38, 72));
+        content.setBackground(new java.awt.Color(10, 38, 72));
+        content.setMaximumSize(new java.awt.Dimension(1430, 730));
+        content.setMinimumSize(new java.awt.Dimension(1430, 730));
 
-        javax.swing.GroupLayout contenedorPaginasLayout = new javax.swing.GroupLayout(contenedorPaginas);
-        contenedorPaginas.setLayout(contenedorPaginasLayout);
-        contenedorPaginasLayout.setHorizontalGroup(
-            contenedorPaginasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1430, Short.MAX_VALUE)
         );
-        contenedorPaginasLayout.setVerticalGroup(
-            contenedorPaginasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 730, Short.MAX_VALUE)
         );
 
-        content.add(contenedorPaginas, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 1430, 730));
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 1430, 730));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, 1087, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        topIcons.setOpaque(false);
+        topIcons.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 5));
+
+        icoTop1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop1.setMaximumSize(new java.awt.Dimension(80, 80));
+        icoTop1.setMinimumSize(new java.awt.Dimension(80, 80));
+        icoTop1.setName(""); // NOI18N
+        icoTop1.setOpaque(true);
+        icoTop1.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop1);
+
+        icoTop2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop2.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop2);
+
+        icoTop3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop3.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop3);
+
+        icoTop4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop4.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop4);
+
+        icoTop5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop5.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop5);
+
+        icoTop6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop6.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop6);
+
+        icoTop7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop7.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop7);
+
+        icoTop8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop8.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop8);
+
+        icoTop9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop9.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop9);
+
+        icoTop10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop10.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop10);
+
+        icoTop11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop11.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop11);
+
+        icoTop12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop12.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop12);
+
+        icoTop13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop13.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop13);
+
+        icoTop14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        icoTop14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        icoTop14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        icoTop14.setPreferredSize(new java.awt.Dimension(80, 80));
+        topIcons.add(icoTop14);
+
+        getContentPane().add(topIcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 93, 1553, -1));
 
         getAccessibleContext().setAccessibleDescription("Launcher Universae");
 
@@ -115,11 +211,42 @@ public class MainWindow extends javax.swing.JFrame {
         });
     }
     
-    
+    private void asignarImagenesEstaticas(){
+        Utilidades.setLabelImage(labelBgImage, "src/launcheruniversae/img/Fondo base.png", true);
+        Utilidades.setLabelImage(icoTop1, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop2, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop3, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop4, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop5, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop6, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop7, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop8, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop9, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop10, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop11, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop12, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop13, "src/launcheruniversae/img/LauncherButton0.png", true);
+        Utilidades.setLabelImage(icoTop14, "src/launcheruniversae/img/LauncherButton0.png", true);
+//        Utilidades.addHoverEffect(icoTop1, "src/launcheruniversae/img/LauncherButton0.png");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel contenedorPaginas;
     private javax.swing.JPanel content;
+    private javax.swing.JLabel icoTop1;
+    private javax.swing.JLabel icoTop10;
+    private javax.swing.JLabel icoTop11;
+    private javax.swing.JLabel icoTop12;
+    private javax.swing.JLabel icoTop13;
+    private javax.swing.JLabel icoTop14;
+    private javax.swing.JLabel icoTop2;
+    private javax.swing.JLabel icoTop3;
+    private javax.swing.JLabel icoTop4;
+    private javax.swing.JLabel icoTop5;
+    private javax.swing.JLabel icoTop6;
+    private javax.swing.JLabel icoTop7;
+    private javax.swing.JLabel icoTop8;
+    private javax.swing.JLabel icoTop9;
     private javax.swing.JLabel labelBgImage;
+    private javax.swing.JPanel topIcons;
     // End of variables declaration//GEN-END:variables
 }

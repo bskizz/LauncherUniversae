@@ -104,9 +104,6 @@ public class Utilidades extends javax.swing.JFrame {
         int labelWidth = labelName.getWidth();
         int labelHeight = labelName.getHeight();
 
-        System.out.println("Tamaño newWidth: " + labelWidth);
-        System.out.println("Tamaño labelHeight: " + labelHeight);
-
         int newWidth = labelWidth;
         int newHeight = labelHeight;
 
@@ -227,6 +224,47 @@ public class Utilidades extends javax.swing.JFrame {
             }
         }).start();
     }
+
+    // Método [7] para agregar efecto HOVER
+    public static void addHoverEffect(JLabel label, String imagePath) {
+        final ImageIcon originalIcon = new ImageIcon(imagePath);
+
+        label.setIcon(originalIcon);
+
+        // MouseListener
+        label.addMouseListener(new java.awt.event.MouseAdapter() {
+            // 1.1 = 10% más grande
+            private final double scaleFactor = 1.1;
+
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+                int width = label.getWidth();
+                int height = label.getHeight();
+                
+                if (width == 0 || height == 0) {
+                    width = originalIcon.getIconWidth();
+                    height = originalIcon.getIconHeight();
+                }
+
+                int newWidth = (int) (width * scaleFactor);
+                int newHeight = (int) (height * scaleFactor);
+
+                Image scaledImage = originalIcon.getImage().getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+                label.setIcon(new ImageIcon(scaledImage));
+
+                label.revalidate();
+                label.repaint();
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent e) {
+                label.setIcon(originalIcon);
+                label.revalidate();
+                label.repaint();
+            }
+        });
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
