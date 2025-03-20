@@ -3,11 +3,14 @@ package launcheruniversae;
 
 /**
  *
- * @author Víctor Arroyo
+ * @author Victor Arroyo
  */
-public class Page_EmbarqueDesembarqueHelicoptero extends javax.swing.JPanel {
+public class PageCarrusel extends javax.swing.JPanel {
 
-    public Page_EmbarqueDesembarqueHelicoptero() {
+    /**
+     * Creates new form Page_EPIS
+     */
+    public PageCarrusel() {
         initComponents();
     }
 
@@ -20,19 +23,32 @@ public class Page_EmbarqueDesembarqueHelicoptero extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+
+        setMaximumSize(new java.awt.Dimension(1430, 730));
+        setMinimumSize(new java.awt.Dimension(1430, 730));
+        setPreferredSize(new java.awt.Dimension(1430, 730));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(330, 330, 330)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 891, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(329, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(339, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

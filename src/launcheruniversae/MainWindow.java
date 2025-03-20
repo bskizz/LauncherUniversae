@@ -5,7 +5,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import utilidades.Utilidades;
-import launcheruniversae.Page1;
+import launcheruniversae.PageBotones;
 
 /**
  *
@@ -13,12 +13,12 @@ import launcheruniversae.Page1;
  */
 public class MainWindow extends javax.swing.JFrame {
 
-    private Page1 pagina1 = new Page1();
-    
+    private PageBotones pagina1 = new PageBotones();
+
     public MainWindow() {
         initComponents();
 //        this.setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-        
+        content.setLayout(new BorderLayout());
         Utilidades.showPanel(pagina1, content);
         asignarImagenesEstaticas();
     }
@@ -32,6 +32,7 @@ public class MainWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        content = new javax.swing.JPanel();
         topIcons = new javax.swing.JPanel();
         icoTop1 = new javax.swing.JLabel();
         icoTop2 = new javax.swing.JLabel();
@@ -47,7 +48,6 @@ public class MainWindow extends javax.swing.JFrame {
         icoTop12 = new javax.swing.JLabel();
         icoTop13 = new javax.swing.JLabel();
         icoTop14 = new javax.swing.JLabel();
-        content = new javax.swing.JPanel();
         labelBgImage = new javax.swing.JLabel();
 
         setTitle("Universae");
@@ -60,6 +60,12 @@ public class MainWindow extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        content.setBackground(new java.awt.Color(10, 38, 72));
+        content.setMaximumSize(new java.awt.Dimension(1430, 730));
+        content.setMinimumSize(new java.awt.Dimension(1430, 730));
+        content.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 1430, 730));
+
         topIcons.setOpaque(false);
         topIcons.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 5));
 
@@ -70,6 +76,11 @@ public class MainWindow extends javax.swing.JFrame {
         icoTop1.setMinimumSize(new java.awt.Dimension(80, 80));
         icoTop1.setName(""); // NOI18N
         icoTop1.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop1MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop1);
 
         icoTop2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -152,23 +163,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         getContentPane().add(topIcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 93, 1553, -1));
 
-        content.setBackground(new java.awt.Color(10, 38, 72));
-        content.setMaximumSize(new java.awt.Dimension(1430, 730));
-        content.setMinimumSize(new java.awt.Dimension(1430, 730));
-
-        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
-        content.setLayout(contentLayout);
-        contentLayout.setHorizontalGroup(
-            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1430, Short.MAX_VALUE)
-        );
-        contentLayout.setVerticalGroup(
-            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 1430, 730));
-
         labelBgImage.setBackground(new java.awt.Color(10, 38, 72));
         labelBgImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/launcheruniversae/img/Fondo base.png"))); // NOI18N
         labelBgImage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -178,6 +172,12 @@ public class MainWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void icoTop1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop1MouseClicked
+//        Utilidades.volverHome(content);
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);
+    }//GEN-LAST:event_icoTop1MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -210,8 +210,21 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void asignarImagenesEstaticas(){
+
+//    private void volverHome(JPanel component) {
+//        java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor(component);
+//        if (window instanceof MainWindow) {
+//            MainWindow launcher = (MainWindow) window;
+//            PageBotones panelBotones = new PageBotones();
+//            Utilidades.showPanel(panelBotones, launcher.getContentPanel());
+//        }
+//    }
+
+    public JPanel getContentPanel() {
+        return content;
+    }
+
+    private void asignarImagenesEstaticas() {
         Utilidades.setLabelImage(labelBgImage, "src/launcheruniversae/img/Fondo base.png", true);
         Utilidades.setLabelImage(icoTop1, "src/launcheruniversae/img/LauncherButton0.png", true);
         Utilidades.setLabelImage(icoTop2, "src/launcheruniversae/img/LauncherButton1.png", true);
