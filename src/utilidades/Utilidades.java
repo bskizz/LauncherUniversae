@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import launcheruniversae.MainWindow;
-import launcheruniversae.PageGame;
+import launcheruniversae.VistaHome;
 
 /**
  *
@@ -109,6 +109,11 @@ public class Utilidades extends javax.swing.JFrame {
 //            return;
 //        }
         ImageIcon image = new ImageIcon(root);
+
+        if (labelName.getWidth() == 0 || labelName.getHeight() == 0) {
+            SwingUtilities.invokeLater(() -> setLabelImage(labelName, root, keepProportions));
+            return;
+        }
         Image originalImage = image.getImage();
 
         int labelWidth = labelName.getWidth();
@@ -254,7 +259,6 @@ public class Utilidades extends javax.swing.JFrame {
             array.add(root + name + i + fileType);
 
         }
-        System.out.println("Rutas: " +array);
         return array;
     }
 

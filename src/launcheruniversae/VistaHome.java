@@ -7,14 +7,13 @@ import utilidades.Utilidades;
  *
  * @author Víctor Arroyo
  */
-public class PageGame extends javax.swing.JPanel {
+public class VistaHome extends javax.swing.JPanel {
 
-    PageCarruselGame carrusel;
-    private int juegoSeleccionado = 0;
+    VistaGame carrusel;
 //    MainWindow mainWindow = new MainWindow();
 //    MainWindow mainWindow;
 
-    public PageGame() {
+    public VistaHome() {
         initComponents();
         agregarImagenesPage1();
     }
@@ -144,44 +143,34 @@ public class PageGame extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    public int getJuegoSeleccionado() {
-        return juegoSeleccionado;
-    }
-
     private void ico1_EmbDesemHelicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico1_EmbDesemHelicMouseClicked
-        juegoSeleccionado = 1;
-        carrusel = new PageCarruselGame();
+        carrusel = new VistaGame(1);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico1_EmbDesemHelicMouseClicked
 
     private void ico2_ProtocoloHemorrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico2_ProtocoloHemorrMouseClicked
-        carrusel = new PageCarruselGame();
+        carrusel = new VistaGame(2);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
-        juegoSeleccionado = 2;
     }//GEN-LAST:event_ico2_ProtocoloHemorrMouseClicked
 
     private void ico3_ManiobrasExtincionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico3_ManiobrasExtincionMouseClicked
-        carrusel = new PageCarruselGame();
+        carrusel = new VistaGame(3);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
-        juegoSeleccionado = 3;
     }//GEN-LAST:event_ico3_ManiobrasExtincionMouseClicked
 
     private void ico4_EpisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico4_EpisMouseClicked
-        carrusel = new PageCarruselGame();
+        carrusel = new VistaGame(4);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
-        juegoSeleccionado = 4;
     }//GEN-LAST:event_ico4_EpisMouseClicked
 
     private void ico5_SeñalizacionHelicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico5_SeñalizacionHelicMouseClicked
-        carrusel = new PageCarruselGame();
+        carrusel = new VistaGame(5);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
-        juegoSeleccionado = 5;
     }//GEN-LAST:event_ico5_SeñalizacionHelicMouseClicked
 
     private void ico6_RescateAscensorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico6_RescateAscensorMouseClicked
-        carrusel = new PageCarruselGame();
+        carrusel = new VistaGame(6);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
-        juegoSeleccionado = 6;
     }//GEN-LAST:event_ico6_RescateAscensorMouseClicked
 
     private void agregarImagenesPage1() {

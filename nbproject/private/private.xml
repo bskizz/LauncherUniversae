@@ -4,10 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/vitu9/Documents/NetBeansProjects/LauncherUniversae/src/launcheruniversae/MainWindow.java</file>
-            <file>file:/C:/Users/vitu9/Documents/NetBeansProjects/LauncherUniversae/src/launcheruniversae/PageCarrusel.java</file>
-            <file>file:/C:/Users/vitu9/Documents/NetBeansProjects/LauncherUniversae/src/launcheruniversae/Page_EmbDesembHelicop.java</file>
-            <file>file:/C:/Users/vitu9/Documents/NetBeansProjects/LauncherUniversae/src/launcheruniversae/PageBotones.java</file>
             <file>file:/C:/Users/vitu9/Documents/NetBeansProjects/LauncherUniversae/src/utilidades/Utilidades.java</file>
+            <file>file:/C:/Users/vitu9/Documents/NetBeansProjects/LauncherUniversae/src/launcheruniversae/VistaHome.java</file>
+            <file>file:/C:/Users/vitu9/Documents/NetBeansProjects/LauncherUniversae/src/launcheruniversae/VistaGame.java</file>
         </group>
     </open-files>
 </project-private>
