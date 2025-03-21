@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import launcheruniversae.MainWindow;
-import launcheruniversae.PageBotones;
+import launcheruniversae.PageGame;
 
 /**
  *
@@ -236,7 +236,6 @@ public class Utilidades extends javax.swing.JFrame {
             }
         }
 
-        // Escalar la imagen con las dimensiones ajustadas
         Icon icon = new ImageIcon(originalImage.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH));
         labelName.setIcon(icon);
         labelName.repaint();
@@ -252,10 +251,10 @@ public class Utilidades extends javax.swing.JFrame {
             fileType = "." + fileType;
         }
         for (int i = 0; i <= listSize; i++) {
-            array.add(root + name + (i + 1) + fileType);
+            array.add(root + name + i + fileType);
 
         }
-        System.out.println(array);
+        System.out.println("Rutas: " +array);
         return array;
     }
 

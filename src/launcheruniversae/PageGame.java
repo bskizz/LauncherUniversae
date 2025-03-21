@@ -7,13 +7,14 @@ import utilidades.Utilidades;
  *
  * @author Víctor Arroyo
  */
-public class PageBotones extends javax.swing.JPanel {
+public class PageGame extends javax.swing.JPanel {
 
-    PageCarrusel carrusel;
+    PageCarruselGame carrusel;
+    private int juegoSeleccionado = 0;
 //    MainWindow mainWindow = new MainWindow();
 //    MainWindow mainWindow;
 
-    public PageBotones() {
+    public PageGame() {
         initComponents();
         agregarImagenesPage1();
     }
@@ -143,50 +144,59 @@ public class PageBotones extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public int getJuegoSeleccionado() {
+        return juegoSeleccionado;
+    }
 
     private void ico1_EmbDesemHelicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico1_EmbDesemHelicMouseClicked
-        carrusel = new PageCarrusel();
+        juegoSeleccionado = 1;
+        carrusel = new PageCarruselGame();
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico1_EmbDesemHelicMouseClicked
 
     private void ico2_ProtocoloHemorrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico2_ProtocoloHemorrMouseClicked
-        carrusel = new PageCarrusel();
+        carrusel = new PageCarruselGame();
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
+        juegoSeleccionado = 2;
     }//GEN-LAST:event_ico2_ProtocoloHemorrMouseClicked
 
     private void ico3_ManiobrasExtincionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico3_ManiobrasExtincionMouseClicked
-        carrusel = new PageCarrusel();
+        carrusel = new PageCarruselGame();
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
+        juegoSeleccionado = 3;
     }//GEN-LAST:event_ico3_ManiobrasExtincionMouseClicked
 
     private void ico4_EpisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico4_EpisMouseClicked
-        carrusel = new PageCarrusel();
+        carrusel = new PageCarruselGame();
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
+        juegoSeleccionado = 4;
     }//GEN-LAST:event_ico4_EpisMouseClicked
 
     private void ico5_SeñalizacionHelicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico5_SeñalizacionHelicMouseClicked
-        carrusel = new PageCarrusel();
+        carrusel = new PageCarruselGame();
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
+        juegoSeleccionado = 5;
     }//GEN-LAST:event_ico5_SeñalizacionHelicMouseClicked
 
     private void ico6_RescateAscensorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico6_RescateAscensorMouseClicked
-        carrusel = new PageCarrusel();
+        carrusel = new PageCarruselGame();
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
+        juegoSeleccionado = 6;
     }//GEN-LAST:event_ico6_RescateAscensorMouseClicked
 
     private void agregarImagenesPage1() {
-        Utilidades.setLabelImage(ico1_EmbDesemHelic, "src/launcheruniversae/img/page1/Grado0.png", true, 0.9);
-        Utilidades.setLabelImage(ico2_ProtocoloHemorr, "src/launcheruniversae/img/page1/Grado1.png", true, 0.9);
-        Utilidades.setLabelImage(ico3_ManiobrasExtincion, "src/launcheruniversae/img/page1/Grado2.png", true, 0.9);
-        Utilidades.setLabelImage(ico4_Epis, "src/launcheruniversae/img/page1/Grado3.png", true, 0.9);
-        Utilidades.setLabelImage(ico5_SeñalizacionHelic, "src/launcheruniversae/img/page1/Grado4.png", true, 0.9);
-        Utilidades.setLabelImage(ico6_RescateAscensor, "src/launcheruniversae/img/page1/Grado5.png", true, 0.9);
-        Utilidades.addHoverEffect(ico1_EmbDesemHelic, "src/launcheruniversae/img/page1/Grado0.png", 0.9);
-        Utilidades.addHoverEffect(ico2_ProtocoloHemorr, "src/launcheruniversae/img/page1/Grado1.png", 0.9);
-        Utilidades.addHoverEffect(ico3_ManiobrasExtincion, "src/launcheruniversae/img/page1/Grado2.png", 0.9);
-        Utilidades.addHoverEffect(ico4_Epis, "src/launcheruniversae/img/page1/Grado3.png", 0.9);
-        Utilidades.addHoverEffect(ico5_SeñalizacionHelic, "src/launcheruniversae/img/page1/Grado4.png", 0.9);
-        Utilidades.addHoverEffect(ico6_RescateAscensor, "src/launcheruniversae/img/page1/Grado5.png", 0.9);
+        Utilidades.setLabelImage(ico1_EmbDesemHelic, "src/launcheruniversae/img/PageGame/Grado0.png", true, 0.9);
+        Utilidades.setLabelImage(ico2_ProtocoloHemorr, "src/launcheruniversae/img/PageGame/Grado1.png", true, 0.9);
+        Utilidades.setLabelImage(ico3_ManiobrasExtincion, "src/launcheruniversae/img/PageGame/Grado2.png", true, 0.9);
+        Utilidades.setLabelImage(ico4_Epis, "src/launcheruniversae/img/PageGame/Grado3.png", true, 0.9);
+        Utilidades.setLabelImage(ico5_SeñalizacionHelic, "src/launcheruniversae/img/PageGame/Grado4.png", true, 0.9);
+        Utilidades.setLabelImage(ico6_RescateAscensor, "src/launcheruniversae/img/PageGame/Grado5.png", true, 0.9);
+        Utilidades.addHoverEffect(ico1_EmbDesemHelic, "src/launcheruniversae/img/PageGame/Grado0.png", 0.9);
+        Utilidades.addHoverEffect(ico2_ProtocoloHemorr, "src/launcheruniversae/img/PageGame/Grado1.png", 0.9);
+        Utilidades.addHoverEffect(ico3_ManiobrasExtincion, "src/launcheruniversae/img/PageGame/Grado2.png", 0.9);
+        Utilidades.addHoverEffect(ico4_Epis, "src/launcheruniversae/img/PageGame/Grado3.png", 0.9);
+        Utilidades.addHoverEffect(ico5_SeñalizacionHelic, "src/launcheruniversae/img/PageGame/Grado4.png", 0.9);
+        Utilidades.addHoverEffect(ico6_RescateAscensor, "src/launcheruniversae/img/PageGame/Grado5.png", 0.9);
     }
 
 

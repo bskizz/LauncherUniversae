@@ -5,7 +5,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import utilidades.Utilidades;
-import launcheruniversae.PageBotones;
+import launcheruniversae.PageGame;
 
 /**
  *
@@ -13,7 +13,7 @@ import launcheruniversae.PageBotones;
  */
 public class MainWindow extends javax.swing.JFrame {
 
-    private PageBotones pagina1 = new PageBotones();
+    private PageGame pagina1 = new PageGame();
 
     public MainWindow() {
         initComponents();
@@ -239,60 +239,60 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void icoTop1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop1MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);
     }//GEN-LAST:event_icoTop1MouseClicked
 
     private void icoTop2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop2MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop2MouseClicked
 
     private void icoTop3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop3MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop3MouseClicked
 
     private void icoTop4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop4MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop4MouseClicked
 
     private void icoTop5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop5MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop5MouseClicked
 
     private void icoTop6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop6MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop6MouseClicked
 
     private void icoTop7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop7MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop7MouseClicked
 
     private void icoTop8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop8MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop8MouseClicked
 
     private void icoTop9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop9MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop9MouseClicked
 
     private void icoTop10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop10MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop10MouseClicked
 
     private void icoTop11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop11MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop11MouseClicked
 
     private void icoTop12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop12MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop12MouseClicked
 
     private void icoTop13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop13MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop13MouseClicked
 
     private void icoTop14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop14MouseClicked
-        PageBotones nuevaPagina = new PageBotones();
+        PageGame nuevaPagina = new PageGame();
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop14MouseClicked
 
     public static void main(String args[]) {
@@ -331,7 +331,7 @@ public class MainWindow extends javax.swing.JFrame {
         java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor(component);
         if (window instanceof MainWindow) {
             MainWindow launcher = (MainWindow) window;
-            PageBotones panelBotones = new PageBotones();
+            PageGame panelBotones = new PageGame();
             Utilidades.showPanel(panelBotones, launcher.getContentPanel());
         }
     }
