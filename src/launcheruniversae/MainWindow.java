@@ -64,7 +64,7 @@ public class MainWindow extends javax.swing.JFrame {
         content.setMaximumSize(new java.awt.Dimension(1430, 730));
         content.setMinimumSize(new java.awt.Dimension(1430, 730));
         content.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 1430, 730));
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 1470, 800));
 
         topIcons.setOpaque(false);
         topIcons.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 5));
@@ -87,78 +87,143 @@ public class MainWindow extends javax.swing.JFrame {
         icoTop2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop2.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop2MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop2);
 
         icoTop3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop3.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop3MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop3);
 
         icoTop4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop4.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop4MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop4);
 
         icoTop5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop5.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop5MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop5);
 
         icoTop6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop6.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop6MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop6);
 
         icoTop7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop7.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop7MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop7);
 
         icoTop8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop8.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop8MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop8);
 
         icoTop9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop9.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop9MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop9);
 
         icoTop10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop10.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop10MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop10);
 
         icoTop11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop11.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop11MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop11);
 
         icoTop12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop12.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop12MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop12);
 
         icoTop13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop13.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop13MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop13);
 
         icoTop14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icoTop14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         icoTop14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         icoTop14.setPreferredSize(new java.awt.Dimension(80, 80));
+        icoTop14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icoTop14MouseClicked(evt);
+            }
+        });
         topIcons.add(icoTop14);
 
         getContentPane().add(topIcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 93, 1553, -1));
@@ -174,10 +239,61 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void icoTop1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop1MouseClicked
-//        Utilidades.volverHome(content);
         PageBotones nuevaPagina = new PageBotones();
         Utilidades.showPanel(nuevaPagina, content);
     }//GEN-LAST:event_icoTop1MouseClicked
+
+    private void icoTop2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop2MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop2MouseClicked
+
+    private void icoTop3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop3MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop3MouseClicked
+
+    private void icoTop4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop4MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop4MouseClicked
+
+    private void icoTop5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop5MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop5MouseClicked
+
+    private void icoTop6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop6MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop6MouseClicked
+
+    private void icoTop7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop7MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop7MouseClicked
+
+    private void icoTop8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop8MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop8MouseClicked
+
+    private void icoTop9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop9MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop9MouseClicked
+
+    private void icoTop10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop10MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop10MouseClicked
+
+    private void icoTop11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop11MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop11MouseClicked
+
+    private void icoTop12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop12MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop12MouseClicked
+
+    private void icoTop13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop13MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop13MouseClicked
+
+    private void icoTop14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop14MouseClicked
+        PageBotones nuevaPagina = new PageBotones();
+        Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop14MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -211,14 +327,14 @@ public class MainWindow extends javax.swing.JFrame {
         });
     }
 
-//    private void volverHome(JPanel component) {
-//        java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor(component);
-//        if (window instanceof MainWindow) {
-//            MainWindow launcher = (MainWindow) window;
-//            PageBotones panelBotones = new PageBotones();
-//            Utilidades.showPanel(panelBotones, launcher.getContentPanel());
-//        }
-//    }
+    private void volverHome(JPanel component) {
+        java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor(component);
+        if (window instanceof MainWindow) {
+            MainWindow launcher = (MainWindow) window;
+            PageBotones panelBotones = new PageBotones();
+            Utilidades.showPanel(panelBotones, launcher.getContentPanel());
+        }
+    }
 
     public JPanel getContentPanel() {
         return content;

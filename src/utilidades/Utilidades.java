@@ -54,7 +54,16 @@ public class Utilidades extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //Método [1] para mostrar paneles (Page1,2,3,etc) dentro de un panel contenedor [content]
+
     public static void showPanel(JPanel pagina, JPanel content) {
+        java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor(content);
+        if (window instanceof MainWindow) {
+            MainWindow main = (MainWindow) window;
+            JPanel contentPanel = main.getContentPanel();
+            if (content != contentPanel) {
+                content = contentPanel;
+            }
+        }
         pagina.setSize(content.getSize());
         pagina.setLocation(0, 0);
 
@@ -62,15 +71,6 @@ public class Utilidades extends javax.swing.JFrame {
         content.add(pagina, BorderLayout.CENTER);
         content.revalidate();
         content.repaint();
-    }
-
-    public static void volverHome(JPanel component) {
-        java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor(component);
-        if (window instanceof MainWindow) {
-            MainWindow launcher = (MainWindow) window;
-            PageBotones panelBotones = new PageBotones();
-            Utilidades.showPanel(panelBotones, launcher.getContentPanel());
-        }
     }
 
     //    Metodo [2-3]  para asignar imageen a un label
@@ -295,18 +295,14 @@ public class Utilidades extends javax.swing.JFrame {
             return;
         }
 
-        System.out.println("1");
         final ImageIcon originalIcon = new ImageIcon(imagePath);
-        System.out.println("2");
         int labelWidth = label.getWidth();
         int labelHeight = label.getHeight();
-        System.out.println("3");
         double baseScale = escala;
         int baseWidth = (int) (labelWidth * baseScale);
         int baseHeight = (int) (labelHeight * baseScale);
         final ImageIcon baseScaledIcon = new ImageIcon(
                 originalIcon.getImage().getScaledInstance(baseWidth, baseHeight, Image.SCALE_SMOOTH));
-        System.out.println("4");
         // 100% del tamaño del label
         final ImageIcon fullScaledIcon = new ImageIcon(
                 originalIcon.getImage().getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH));

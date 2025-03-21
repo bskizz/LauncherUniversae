@@ -1,5 +1,6 @@
 package launcheruniversae;
 
+import javax.swing.JPanel;
 import utilidades.Utilidades;
 
 /**
@@ -8,8 +9,10 @@ import utilidades.Utilidades;
  */
 public class PageBotones extends javax.swing.JPanel {
 
-    PageCarrusel carrusel = new PageCarrusel();
-    
+    PageCarrusel carrusel;
+//    MainWindow mainWindow = new MainWindow();
+//    MainWindow mainWindow;
+
     public PageBotones() {
         initComponents();
         agregarImagenesPage1();
@@ -24,7 +27,7 @@ public class PageBotones extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        content = new javax.swing.JPanel();
+        contenedorPagianBotones = new javax.swing.JPanel();
         ico1_EmbDesemHelic = new javax.swing.JLabel();
         ico2_ProtocoloHemorr = new javax.swing.JLabel();
         ico3_ManiobrasExtincion = new javax.swing.JLabel();
@@ -36,12 +39,12 @@ public class PageBotones extends javax.swing.JPanel {
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(1550, 870));
 
-        content.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        content.setMaximumSize(new java.awt.Dimension(1430, 730));
-        content.setMinimumSize(new java.awt.Dimension(1430, 730));
-        content.setOpaque(false);
-        content.setPreferredSize(new java.awt.Dimension(1430, 730));
-        content.setLayout(new java.awt.GridLayout(2, 3, 80, 110));
+        contenedorPagianBotones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        contenedorPagianBotones.setMaximumSize(new java.awt.Dimension(1430, 730));
+        contenedorPagianBotones.setMinimumSize(new java.awt.Dimension(1430, 730));
+        contenedorPagianBotones.setOpaque(false);
+        contenedorPagianBotones.setPreferredSize(new java.awt.Dimension(1430, 730));
+        contenedorPagianBotones.setLayout(new java.awt.GridLayout(2, 3, 80, 110));
 
         ico1_EmbDesemHelic.setBackground(new java.awt.Color(10, 38, 72));
         ico1_EmbDesemHelic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -55,7 +58,7 @@ public class PageBotones extends javax.swing.JPanel {
                 ico1_EmbDesemHelicMouseClicked(evt);
             }
         });
-        content.add(ico1_EmbDesemHelic);
+        contenedorPagianBotones.add(ico1_EmbDesemHelic);
 
         ico2_ProtocoloHemorr.setBackground(new java.awt.Color(10, 38, 72));
         ico2_ProtocoloHemorr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -70,7 +73,7 @@ public class PageBotones extends javax.swing.JPanel {
                 ico2_ProtocoloHemorrMouseClicked(evt);
             }
         });
-        content.add(ico2_ProtocoloHemorr);
+        contenedorPagianBotones.add(ico2_ProtocoloHemorr);
 
         ico3_ManiobrasExtincion.setBackground(new java.awt.Color(10, 38, 72));
         ico3_ManiobrasExtincion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -84,7 +87,7 @@ public class PageBotones extends javax.swing.JPanel {
                 ico3_ManiobrasExtincionMouseClicked(evt);
             }
         });
-        content.add(ico3_ManiobrasExtincion);
+        contenedorPagianBotones.add(ico3_ManiobrasExtincion);
 
         ico4_Epis.setBackground(new java.awt.Color(10, 38, 72));
         ico4_Epis.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -98,7 +101,7 @@ public class PageBotones extends javax.swing.JPanel {
                 ico4_EpisMouseClicked(evt);
             }
         });
-        content.add(ico4_Epis);
+        contenedorPagianBotones.add(ico4_Epis);
 
         ico5_SeñalizacionHelic.setBackground(new java.awt.Color(10, 38, 72));
         ico5_SeñalizacionHelic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -112,7 +115,7 @@ public class PageBotones extends javax.swing.JPanel {
                 ico5_SeñalizacionHelicMouseClicked(evt);
             }
         });
-        content.add(ico5_SeñalizacionHelic);
+        contenedorPagianBotones.add(ico5_SeñalizacionHelic);
 
         ico6_RescateAscensor.setBackground(new java.awt.Color(204, 102, 255));
         ico6_RescateAscensor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -126,48 +129,49 @@ public class PageBotones extends javax.swing.JPanel {
                 ico6_RescateAscensorMouseClicked(evt);
             }
         });
-        content.add(ico6_RescateAscensor);
+        contenedorPagianBotones.add(ico6_RescateAscensor);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, 1550, Short.MAX_VALUE)
+            .addComponent(contenedorPagianBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 1550, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
+            .addComponent(contenedorPagianBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void ico1_EmbDesemHelicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico1_EmbDesemHelicMouseClicked
-        Utilidades.showPanel(carrusel, content);
-        //Asignar que el carrusel empiece con la imagen embarque desembarque helicop
+        carrusel = new PageCarrusel();
+        Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico1_EmbDesemHelicMouseClicked
 
     private void ico2_ProtocoloHemorrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico2_ProtocoloHemorrMouseClicked
-        Utilidades.showPanel(carrusel, content);
-        //Asignar que el carrusel empiece con la imagen protocolo hemorragia
+        carrusel = new PageCarrusel();
+        Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico2_ProtocoloHemorrMouseClicked
 
     private void ico3_ManiobrasExtincionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico3_ManiobrasExtincionMouseClicked
-        Utilidades.showPanel(carrusel, content);
-        //Asignar que el carrusel empiece con la imagen maniobras extincion
+        carrusel = new PageCarrusel();
+        Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico3_ManiobrasExtincionMouseClicked
 
     private void ico4_EpisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico4_EpisMouseClicked
-        Utilidades.showPanel(carrusel, content);
-        //Asignar que el carrusel empiece con la imagen EPIS
+        carrusel = new PageCarrusel();
+        Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico4_EpisMouseClicked
 
     private void ico5_SeñalizacionHelicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico5_SeñalizacionHelicMouseClicked
-        Utilidades.showPanel(carrusel, content);
-        //Asignar que el carrusel empiece con la imagen señalizacion helic
+        carrusel = new PageCarrusel();
+        Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico5_SeñalizacionHelicMouseClicked
 
     private void ico6_RescateAscensorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico6_RescateAscensorMouseClicked
-        Utilidades.showPanel(carrusel, content);
-        //Asignar que el carrusel empiece con la imagen  rescate ascensor
+        carrusel = new PageCarrusel();
+        Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico6_RescateAscensorMouseClicked
 
     private void agregarImagenesPage1() {
@@ -187,7 +191,7 @@ public class PageBotones extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel content;
+    private javax.swing.JPanel contenedorPagianBotones;
     private javax.swing.JLabel ico1_EmbDesemHelic;
     private javax.swing.JLabel ico2_ProtocoloHemorr;
     private javax.swing.JLabel ico3_ManiobrasExtincion;
