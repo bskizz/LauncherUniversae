@@ -14,13 +14,16 @@ public class VistaGame extends javax.swing.JPanel {
     private ArrayList<JLabel> listaLabelBolas = new ArrayList();
     int pos = 0; // posicion carrusel 0 -- 4
     private int carruselSeleccionado; // 0 -- 5 (depende del boton que presionamos en la ventana home)
+    private javax.swing.Timer timer;
 
     public VistaGame(int carruselAMostrar) {
         initComponents();
         listaLabelBolas = createLabelListExistentes(imgBolaCarrusel0, imgBolaCarrusel1, imgBolaCarrusel2, imgBolaCarrusel3, imgBolaCarrusel4);
         carruselSeleccionado = carruselAMostrar;
+        Utilidades.setLabelImage(botonDerechaCarrusel, "src/launcheruniversae/img/PageCarruselGame/Flecha derecha.png", false, 0.7);
         actualizarCarrusel();
         rellenarBola(pos);
+        iniciarCarruselAutomatico();
     }
 
     /**
@@ -68,6 +71,14 @@ public class VistaGame extends javax.swing.JPanel {
         imgMainCarrusel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/launcheruniversae/img/PageCarruselGame/Embarque0.png"))); // NOI18N
         imgMainCarrusel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         imgMainCarrusel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imgMainCarrusel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                imgMainCarruselMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imgMainCarruselMouseExited(evt);
+            }
+        });
         contenedorEmbDesembHelic.add(imgMainCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 860, 490));
 
         imgCarruselFondoDerecha.setBackground(new java.awt.Color(102, 102, 102));
@@ -170,8 +181,10 @@ public class VistaGame extends javax.swing.JPanel {
         contenedorEmbDesembHelic.add(imgComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1284, 806, 260, 50));
 
         labelTitulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        labelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         labelTitulo.setText("Embarque y desembarque en helicoptero");
         labelTitulo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        labelTitulo.setVerifyInputWhenFocusTarget(false);
         contenedorEmbDesembHelic.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 750, 40));
 
         jScrollPane1.setBorder(null);
@@ -180,6 +193,7 @@ public class VistaGame extends javax.swing.JPanel {
         txtDescripcion.setEditable(false);
         txtDescripcion.setColumns(20);
         txtDescripcion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtDescripcion.setForeground(new java.awt.Color(255, 255, 255));
         txtDescripcion.setLineWrap(true);
         txtDescripcion.setRows(8);
         txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\n");
@@ -206,6 +220,12 @@ public class VistaGame extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonIzquierdaCarruselMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonIzquierdaCarruselMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonIzquierdaCarruselMouseExited(evt);
+            }
         });
         contenedorEmbDesembHelic.add(botonIzquierdaCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 30, 50));
 
@@ -215,6 +235,12 @@ public class VistaGame extends javax.swing.JPanel {
         botonDerechaCarrusel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonDerechaCarruselMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonDerechaCarruselMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonDerechaCarruselMouseExited(evt);
             }
         });
         contenedorEmbDesembHelic.add(botonDerechaCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 230, 30, 50));
@@ -227,41 +253,49 @@ public class VistaGame extends javax.swing.JPanel {
     private void imgCarruselFondoDerechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgCarruselFondoDerechaMouseClicked
         pos += 1;
         actualizarCarrusel();
+        timer.restart();
     }//GEN-LAST:event_imgCarruselFondoDerechaMouseClicked
 
     private void botonDerechaCarruselMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonDerechaCarruselMouseClicked
         pos += 1;
         actualizarCarrusel();
+        timer.restart();
     }//GEN-LAST:event_botonDerechaCarruselMouseClicked
 
     private void imgCarruselFondoIzquierdaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgCarruselFondoIzquierdaMouseClicked
         pos -= 1;
         actualizarCarrusel();
+        timer.restart();
     }//GEN-LAST:event_imgCarruselFondoIzquierdaMouseClicked
 
     private void botonIzquierdaCarruselMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIzquierdaCarruselMouseClicked
         pos -= 1;
         actualizarCarrusel();
+        timer.restart();
     }//GEN-LAST:event_botonIzquierdaCarruselMouseClicked
 
     private void imgBolaCarrusel0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBolaCarrusel0MouseClicked
         pos = 0;
         actualizarCarrusel();
+        timer.restart();
     }//GEN-LAST:event_imgBolaCarrusel0MouseClicked
 
     private void imgBolaCarrusel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBolaCarrusel1MouseClicked
         pos = 1;
         actualizarCarrusel();
+        timer.restart();
     }//GEN-LAST:event_imgBolaCarrusel1MouseClicked
 
     private void imgBolaCarrusel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBolaCarrusel3MouseClicked
         pos = 3;
         actualizarCarrusel();
+        timer.restart();
     }//GEN-LAST:event_imgBolaCarrusel3MouseClicked
 
     private void imgBolaCarrusel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBolaCarrusel4MouseClicked
         pos = 4;
         actualizarCarrusel();
+        timer.restart();
     }//GEN-LAST:event_imgBolaCarrusel4MouseClicked
 
     private void imgBolaCarrusel2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imgBolaCarrusel2KeyPressed
@@ -271,7 +305,32 @@ public class VistaGame extends javax.swing.JPanel {
     private void imgBolaCarrusel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBolaCarrusel2MouseClicked
         pos = 2;
         actualizarCarrusel();
+        timer.restart();
     }//GEN-LAST:event_imgBolaCarrusel2MouseClicked
+
+    private void imgMainCarruselMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgMainCarruselMouseEntered
+        timer.stop();
+    }//GEN-LAST:event_imgMainCarruselMouseEntered
+
+    private void imgMainCarruselMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgMainCarruselMouseExited
+        timer.restart();
+    }//GEN-LAST:event_imgMainCarruselMouseExited
+
+    private void botonDerechaCarruselMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonDerechaCarruselMouseEntered
+        Utilidades.setLabelImage(botonDerechaCarrusel, "src/launcheruniversae/img/PageCarruselGame/Flecha derecha.png", false, 1);
+    }//GEN-LAST:event_botonDerechaCarruselMouseEntered
+
+    private void botonDerechaCarruselMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonDerechaCarruselMouseExited
+        Utilidades.setLabelImage(botonDerechaCarrusel, "src/launcheruniversae/img/PageCarruselGame/Flecha derecha.png", false, 0.7);
+    }//GEN-LAST:event_botonDerechaCarruselMouseExited
+
+    private void botonIzquierdaCarruselMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIzquierdaCarruselMouseEntered
+        Utilidades.setLabelImage(botonIzquierdaCarrusel, "src/launcheruniversae/img/PageCarruselGame/Flecha izquierda.png", false, 1);
+    }//GEN-LAST:event_botonIzquierdaCarruselMouseEntered
+
+    private void botonIzquierdaCarruselMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIzquierdaCarruselMouseExited
+        Utilidades.setLabelImage(botonIzquierdaCarrusel, "src/launcheruniversae/img/PageCarruselGame/Flecha izquierda.png", false, 0.7);
+    }//GEN-LAST:event_botonIzquierdaCarruselMouseExited
 
     private void actualizarCarrusel() {
         crearListaRutasCarruselSeleccionado();
@@ -332,12 +391,25 @@ public class VistaGame extends javax.swing.JPanel {
         }
     }
 
-    public static ArrayList<JLabel> createLabelListExistentes(JLabel... labels) {
+    private ArrayList<JLabel> createLabelListExistentes(JLabel... labels) {
         ArrayList<JLabel> list = new ArrayList<>();
         for (JLabel label : labels) {
             list.add(label);
         }
         return list;
+    }
+
+    private void iniciarCarruselAutomatico() {
+        int delay = 3000;
+        timer = new javax.swing.Timer(delay, e -> {
+            if (this.isShowing()) {
+                pos++;
+                actualizarCarrusel();
+            } else {
+                ((javax.swing.Timer) e.getSource()).stop();
+            }
+        });
+        timer.start();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

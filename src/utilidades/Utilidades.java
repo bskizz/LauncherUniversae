@@ -54,7 +54,6 @@ public class Utilidades extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //Método [1] para mostrar paneles (Page1,2,3,etc) dentro de un panel contenedor [content]
-
     public static void showPanel(JPanel pagina, JPanel content) {
         java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor(content);
         if (window instanceof MainWindow) {
@@ -304,8 +303,8 @@ public class Utilidades extends javax.swing.JFrame {
         double baseScale = escala;
         int baseWidth = (int) (labelWidth * baseScale);
         int baseHeight = (int) (labelHeight * baseScale);
-        final ImageIcon baseScaledIcon = new ImageIcon(
-                originalIcon.getImage().getScaledInstance(baseWidth, baseHeight, Image.SCALE_SMOOTH));
+        final ImageIcon baseScaledIcon = new ImageIcon(originalIcon.getImage().getScaledInstance(baseWidth, baseHeight, Image.SCALE_SMOOTH));
+        
         // 100% del tamaño del label
         final ImageIcon fullScaledIcon = new ImageIcon(
                 originalIcon.getImage().getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH));
