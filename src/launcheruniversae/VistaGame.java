@@ -20,10 +20,10 @@ public class VistaGame extends javax.swing.JPanel {
         initComponents();
         listaLabelBolas = createLabelListExistentes(imgBolaCarrusel0, imgBolaCarrusel1, imgBolaCarrusel2, imgBolaCarrusel3, imgBolaCarrusel4);
         carruselSeleccionado = carruselAMostrar;
-        Utilidades.setLabelImage(botonDerechaCarrusel, "src/launcheruniversae/img/PageCarruselGame/Flecha derecha.png", false, 0.7);
         actualizarCarrusel();
         rellenarBola(pos);
         iniciarCarruselAutomatico();
+        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createEmptyBorder()); //para el borde de la descripcion, que desde modo grafico no se deshabilita
     }
 
     /**
@@ -197,7 +197,9 @@ public class VistaGame extends javax.swing.JPanel {
         txtDescripcion.setLineWrap(true);
         txtDescripcion.setRows(8);
         txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\n");
+        txtDescripcion.setAutoscrolls(false);
         txtDescripcion.setBorder(null);
+        txtDescripcion.setCaretColor(new java.awt.Color(0, 0, 0));
         txtDescripcion.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtDescripcion.setOpaque(false);
         txtDescripcion.setBackground(new java.awt.Color(0, 0, 0, 0));
@@ -359,21 +361,39 @@ public class VistaGame extends javax.swing.JPanel {
         switch (carruselSeleccionado) {
             case 1:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "Embarque", ".png", 4);
+                labelTitulo.setText("Embarque y desembarque en helicoptero");
+                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
+                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             case 2:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "Hemorragia", ".png", 4);
+                labelTitulo.setText("Protocolo ante una hemorragia externa");
+                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
+                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             case 3:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "Extincion", ".png", 4);
+                labelTitulo.setText("Maniobras de extinción según la instalación");
+                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
+                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             case 4:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "EPIS", ".png", 4);
+                labelTitulo.setText("Tipología y características de los EPIs");
+                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
+                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             case 5:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "Helicoptero", ".png", 4);
+                labelTitulo.setText("Señalización a helicoptero desde tierra");
+                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
+                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             case 6:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "Ascensor", ".png", 4);
+                labelTitulo.setText("Rescate en ascensor");
+                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
+                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             default:
                 listaRutasImagenesCarrusel = new ArrayList<>();

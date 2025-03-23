@@ -17,7 +17,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     public MainWindow() {
         initComponents();
-//        this.setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+        this.setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         content.setLayout(new BorderLayout());
         Utilidades.showPanel(pagina1, content);
         asignarImagenesEstaticas();
@@ -325,15 +325,6 @@ public class MainWindow extends javax.swing.JFrame {
                 new MainWindow().setVisible(true);
             }
         });
-    }
-
-    private void volverHome(JPanel component) {
-        java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor(component);
-        if (window instanceof MainWindow) {
-            MainWindow launcher = (MainWindow) window;
-            VistaHome panelBotones = new VistaHome();
-            Utilidades.showPanel(panelBotones, launcher.getContentPanel());
-        }
     }
 
     public JPanel getContentPanel() {
