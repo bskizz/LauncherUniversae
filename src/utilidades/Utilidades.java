@@ -140,6 +140,11 @@ public class Utilidades extends javax.swing.JFrame {
         ImageIcon image = new ImageIcon(root);
         Image originalImage = image.getImage();
 
+        if (labelName.getWidth() == 0 || labelName.getHeight() == 0) {
+            SwingUtilities.invokeLater(() -> setLabelImage(labelName, root, keepProportions, dimension));
+            return;
+        }
+
         int newWidth = dimension.width;
         int newHeight = dimension.height;
 

@@ -36,6 +36,7 @@ public class VistaGame extends javax.swing.JPanel {
     private void initComponents() {
 
         contenedorEmbDesembHelic = new javax.swing.JPanel();
+        imgComenzar = new javax.swing.JLabel();
         imgMainCarrusel = new javax.swing.JLabel();
         imgCarruselFondoDerecha = new javax.swing.JLabel();
         imgCarruselFondoIzquierda = new javax.swing.JLabel();
@@ -45,7 +46,6 @@ public class VistaGame extends javax.swing.JPanel {
         imgBolaCarrusel2 = new javax.swing.JLabel();
         imgBolaCarrusel3 = new javax.swing.JLabel();
         imgBolaCarrusel4 = new javax.swing.JLabel();
-        imgComenzar = new javax.swing.JLabel();
         labelTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescripcion = new javax.swing.JTextArea();
@@ -66,6 +66,11 @@ public class VistaGame extends javax.swing.JPanel {
         contenedorEmbDesembHelic.setPreferredSize(new java.awt.Dimension(1430, 730));
         contenedorEmbDesembHelic.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        imgComenzar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgComenzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/launcheruniversae/img/PageCarruselGame/Comenzar.png"))); // NOI18N
+        imgComenzar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        contenedorEmbDesembHelic.add(imgComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 740, 260, 50));
+
         imgMainCarrusel.setBackground(new java.awt.Color(51, 51, 51));
         imgMainCarrusel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imgMainCarrusel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/launcheruniversae/img/PageCarruselGame/Embarque0.png"))); // NOI18N
@@ -79,7 +84,7 @@ public class VistaGame extends javax.swing.JPanel {
                 imgMainCarruselMouseExited(evt);
             }
         });
-        contenedorEmbDesembHelic.add(imgMainCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 860, 490));
+        contenedorEmbDesembHelic.add(imgMainCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 860, 490));
 
         imgCarruselFondoDerecha.setBackground(new java.awt.Color(102, 102, 102));
         imgCarruselFondoDerecha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -90,7 +95,7 @@ public class VistaGame extends javax.swing.JPanel {
                 imgCarruselFondoDerechaMouseClicked(evt);
             }
         });
-        contenedorEmbDesembHelic.add(imgCarruselFondoDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 40, 130, 420));
+        contenedorEmbDesembHelic.add(imgCarruselFondoDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, 130, 420));
 
         imgCarruselFondoIzquierda.setBackground(new java.awt.Color(102, 102, 102));
         imgCarruselFondoIzquierda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/launcheruniversae/img/PageCarruselGame/Cuadrado fondo enfocado.png"))); // NOI18N
@@ -100,7 +105,7 @@ public class VistaGame extends javax.swing.JPanel {
                 imgCarruselFondoIzquierdaMouseClicked(evt);
             }
         });
-        contenedorEmbDesembHelic.add(imgCarruselFondoIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 140, 420));
+        contenedorEmbDesembHelic.add(imgCarruselFondoIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 140, 420));
 
         PanelIndiceImagenes.setOpaque(false);
 
@@ -174,11 +179,7 @@ public class VistaGame extends javax.swing.JPanel {
         });
         PanelIndiceImagenes.add(imgBolaCarrusel4);
 
-        contenedorEmbDesembHelic.add(PanelIndiceImagenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 500, 110, -1));
-
-        imgComenzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/launcheruniversae/img/PageCarruselGame/Comenzar.png"))); // NOI18N
-        imgComenzar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        contenedorEmbDesembHelic.add(imgComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1284, 806, 260, 50));
+        contenedorEmbDesembHelic.add(PanelIndiceImagenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, 110, -1));
 
         labelTitulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -229,7 +230,7 @@ public class VistaGame extends javax.swing.JPanel {
                 botonIzquierdaCarruselMouseExited(evt);
             }
         });
-        contenedorEmbDesembHelic.add(botonIzquierdaCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 30, 50));
+        contenedorEmbDesembHelic.add(botonIzquierdaCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 30, 50));
 
         botonDerechaCarrusel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         botonDerechaCarrusel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/launcheruniversae/img/PageCarruselGame/Flecha derecha.png"))); // NOI18N
@@ -245,9 +246,9 @@ public class VistaGame extends javax.swing.JPanel {
                 botonDerechaCarruselMouseExited(evt);
             }
         });
-        contenedorEmbDesembHelic.add(botonDerechaCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 230, 30, 50));
+        contenedorEmbDesembHelic.add(botonDerechaCarrusel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 220, 30, 50));
 
-        add(contenedorEmbDesembHelic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, 870));
+        add(contenedorEmbDesembHelic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 820));
         contenedorEmbDesembHelic.getAccessibleContext().setAccessibleName("");
         contenedorEmbDesembHelic.getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
