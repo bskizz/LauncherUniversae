@@ -1,6 +1,7 @@
 package launcheruniversae;
 
-import javax.swing.JPanel;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import utilidades.Utilidades;
 
 /**
@@ -10,9 +11,7 @@ import utilidades.Utilidades;
 public class VistaHome extends javax.swing.JPanel {
 
     VistaGame carrusel;
-//    MainWindow mainWindow = new MainWindow();
-//    MainWindow mainWindow;
-
+    
     public VistaHome() {
         initComponents();
         agregarImagenesPage1();

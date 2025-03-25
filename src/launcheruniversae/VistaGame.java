@@ -2,6 +2,8 @@ package launcheruniversae;
 
 import java.util.ArrayList;
 import javax.swing.JLabel;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import utilidades.Utilidades;
 
 /**
@@ -9,6 +11,9 @@ import utilidades.Utilidades;
  * @author Victor Arroyo
  */
 public class VistaGame extends javax.swing.JPanel {
+
+    JSONObject jsonObj = new JSONObject(Utilidades.readTextFile("src/BBDD/BaseDeDatos.json"));
+    JSONArray jsonGrados = jsonObj.getJSONArray("grados");
 
     private ArrayList<String> listaRutasImagenesCarrusel;
     private ArrayList<JLabel> listaLabelBolas = new ArrayList();
@@ -18,12 +23,13 @@ public class VistaGame extends javax.swing.JPanel {
 
     public VistaGame(int carruselAMostrar) {
         initComponents();
-        listaLabelBolas = createLabelListExistentes(imgBolaCarrusel0, imgBolaCarrusel1, imgBolaCarrusel2, imgBolaCarrusel3, imgBolaCarrusel4);
+        listaLabelBolas = createLabelListBolas(imgBolaCarrusel0, imgBolaCarrusel1, imgBolaCarrusel2, imgBolaCarrusel3, imgBolaCarrusel4);
         carruselSeleccionado = carruselAMostrar;
         actualizarCarrusel();
         rellenarBola(pos);
         iniciarCarruselAutomatico();
-        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createEmptyBorder()); //para el borde de la descripcion, que desde modo grafico no se deshabilita
+        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createEmptyBorder());
+//para el borde de la descripcion, que desde modo grafico no se deshabilita
     }
 
     /**
@@ -349,8 +355,16 @@ public class VistaGame extends javax.swing.JPanel {
             pos = 0;
         }
 
+        JSONObject primerGrado = jsonGrados.getJSONObject(pos);
+        JSONArray juegos = primerGrado.getJSONArray("juegos");
+        JSONObject primerJuego = juegos.getJSONObject(carruselSeleccionado-1);
+
+        String titulo = primerJuego.getString("titulo");
+        String descripcion = primerJuego.getString("descripcion");
         String rutaImagen = listaRutasImagenesCarrusel.get(pos);
         Utilidades.setLabelImage(imgMainCarrusel, rutaImagen, true);
+        labelTitulo.setText(titulo);
+        txtDescripcion.setText(descripcion);
 
         rellenarBola(pos);
 
@@ -362,39 +376,21 @@ public class VistaGame extends javax.swing.JPanel {
         switch (carruselSeleccionado) {
             case 1:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "Embarque", ".png", 4);
-                labelTitulo.setText("Embarque y desembarque en helicoptero");
-                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
-                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             case 2:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "Hemorragia", ".png", 4);
-                labelTitulo.setText("Protocolo ante una hemorragia externa");
-                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
-                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             case 3:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "Extincion", ".png", 4);
-                labelTitulo.setText("Maniobras de extinción según la instalación");
-                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
-                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             case 4:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "EPIS", ".png", 4);
-                labelTitulo.setText("Tipología y características de los EPIs");
-                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
-                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             case 5:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "Helicoptero", ".png", 4);
-                labelTitulo.setText("Señalización a helicoptero desde tierra");
-                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
-                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             case 6:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "Ascensor", ".png", 4);
-                labelTitulo.setText("Rescate en ascensor");
-                txtDescripcion.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n" + "\n"
-                        + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
                 break;
             default:
                 listaRutasImagenesCarrusel = new ArrayList<>();
@@ -412,7 +408,7 @@ public class VistaGame extends javax.swing.JPanel {
         }
     }
 
-    private ArrayList<JLabel> createLabelListExistentes(JLabel... labels) {
+    private ArrayList<JLabel> createLabelListBolas(JLabel... labels) {
         ArrayList<JLabel> list = new ArrayList<>();
         for (JLabel label : labels) {
             list.add(label);
