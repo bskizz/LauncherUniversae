@@ -17,7 +17,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     public MainWindow() {
         initComponents();
-        this.setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+//        this.setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         content.setLayout(new BorderLayout());
         Utilidades.showPanel(pagina1, content);
         asignarImagenesEstaticas();
@@ -240,59 +240,73 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void icoTop1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop1MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(0);
         Utilidades.showPanel(nuevaPagina, content);
     }//GEN-LAST:event_icoTop1MouseClicked
 
     private void icoTop2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop2MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(1);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop2MouseClicked
 
     private void icoTop3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop3MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(2);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop3MouseClicked
 
     private void icoTop4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop4MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(3);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop4MouseClicked
 
     private void icoTop5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop5MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(4);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop5MouseClicked
 
     private void icoTop6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop6MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(5);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop6MouseClicked
 
     private void icoTop7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop7MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(6);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop7MouseClicked
 
     private void icoTop8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop8MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(7);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop8MouseClicked
 
     private void icoTop9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop9MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(8);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop9MouseClicked
 
     private void icoTop10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop10MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(9);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop10MouseClicked
 
     private void icoTop11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop11MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(10);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop11MouseClicked
 
     private void icoTop12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop12MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(11);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop12MouseClicked
 
     private void icoTop13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop13MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(12);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop13MouseClicked
 
     private void icoTop14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icoTop14MouseClicked
         VistaHome nuevaPagina = new VistaHome();
+        nuevaPagina.setEscudoSeleccionado(13);
         Utilidades.showPanel(nuevaPagina, content);    }//GEN-LAST:event_icoTop14MouseClicked
 
     public static void main(String args[]) {
@@ -347,20 +361,20 @@ public class MainWindow extends javax.swing.JFrame {
         Utilidades.setLabelImage(icoTop12, "src/launcheruniversae/img/LauncherButton11.png", true);
         Utilidades.setLabelImage(icoTop13, "src/launcheruniversae/img/LauncherButton12.png", true);
         Utilidades.setLabelImage(icoTop14, "src/launcheruniversae/img/LauncherButton13.png", true);
-        Utilidades.addHoverEffect(icoTop1, "src/launcheruniversae/img/LauncherButton0.png", 0.9);
-        Utilidades.addHoverEffect(icoTop2, "src/launcheruniversae/img/LauncherButton1.png", 0.9);
-        Utilidades.addHoverEffect(icoTop3, "src/launcheruniversae/img/LauncherButton2.png", 0.9);
-        Utilidades.addHoverEffect(icoTop4, "src/launcheruniversae/img/LauncherButton3.png", 0.9);
-        Utilidades.addHoverEffect(icoTop5, "src/launcheruniversae/img/LauncherButton4.png", 0.9);
-        Utilidades.addHoverEffect(icoTop6, "src/launcheruniversae/img/LauncherButton5.png", 0.9);
-        Utilidades.addHoverEffect(icoTop7, "src/launcheruniversae/img/LauncherButton6.png", 0.9);
-        Utilidades.addHoverEffect(icoTop8, "src/launcheruniversae/img/LauncherButton7.png", 0.9);
-        Utilidades.addHoverEffect(icoTop9, "src/launcheruniversae/img/LauncherButton8.png", 0.9);
-        Utilidades.addHoverEffect(icoTop10, "src/launcheruniversae/img/LauncherButton9.png", 0.9);
-        Utilidades.addHoverEffect(icoTop11, "src/launcheruniversae/img/LauncherButton10.png", 0.9);
-        Utilidades.addHoverEffect(icoTop12, "src/launcheruniversae/img/LauncherButton11.png", 0.9);
-        Utilidades.addHoverEffect(icoTop13, "src/launcheruniversae/img/LauncherButton12.png", 0.9);
-        Utilidades.addHoverEffect(icoTop14, "src/launcheruniversae/img/LauncherButton13.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop1, "src/launcheruniversae/img/LauncherButton0.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop2, "src/launcheruniversae/img/LauncherButton1.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop3, "src/launcheruniversae/img/LauncherButton2.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop4, "src/launcheruniversae/img/LauncherButton3.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop5, "src/launcheruniversae/img/LauncherButton4.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop6, "src/launcheruniversae/img/LauncherButton5.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop7, "src/launcheruniversae/img/LauncherButton6.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop8, "src/launcheruniversae/img/LauncherButton7.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop9, "src/launcheruniversae/img/LauncherButton8.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop10, "src/launcheruniversae/img/LauncherButton9.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop11, "src/launcheruniversae/img/LauncherButton10.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop12, "src/launcheruniversae/img/LauncherButton11.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop13, "src/launcheruniversae/img/LauncherButton12.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(icoTop14, "src/launcheruniversae/img/LauncherButton13.png", 0.9);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

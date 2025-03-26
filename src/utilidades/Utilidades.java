@@ -9,9 +9,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 import launcheruniversae.MainWindow;
 
 /**
@@ -76,7 +78,7 @@ public class Utilidades extends javax.swing.JFrame {
         labelName.repaint();
     }
 
-//    Metodo [2-3] sobrecargado para asignar imageen a un label, con la opcion booleana de conerbar las proporciones de tamaño
+//    Sobrecarga [2-3] - opcion booleana de conserbar las proporciones de tamaño
     public static void setLabelImage(JLabel labelName, String root, boolean keepProportions) {
         ImageIcon image = new ImageIcon(root);
 
@@ -109,7 +111,7 @@ public class Utilidades extends javax.swing.JFrame {
         labelName.repaint();
     }
 
-//    Metodo [2-3] sobrecargado para asignar imageen a un label, añadiendo el tamaño del tamaño de la imagen en el interior del label a tipo de porcentaje (0.9 -> 90% tamaño del label)
+//    Sobrecarga [2-3] - añadiendo el tamaño del tamaño de la imagen en el interior del label a tipo de porcentaje (0.9 -> 90% tamaño del label)
     public static void setLabelImage(JLabel labelName, String root, boolean keepProportions, double escala) {
         ImageIcon image = new ImageIcon(root);
 
@@ -135,7 +137,7 @@ public class Utilidades extends javax.swing.JFrame {
         }
     }
 
-    //Metodo [2-3] sobrecargado para asignar imageen a un label, con la opcion booleana de conerbar las proporciones de tamaño --> Aqui el tamaño sera indicado con [Dimension newDimension = new Dimension(width, height);]
+    //Sobrecarga [2-3] - se puede indicar las dimensiones --> Aqui el tamaño sera indicado con [Dimension newDimension = new Dimension(width, height);]
     public static void setLabelImage(JLabel labelName, String root, boolean keepProportions, Dimension dimension) {
         ImageIcon image = new ImageIcon(root);
         Image originalImage = image.getImage();
@@ -211,10 +213,10 @@ public class Utilidades extends javax.swing.JFrame {
     }
 
     // Método [7] para agregar efecto HOVER
-    public static void addHoverEffect(JLabel label, String imagePath, double escala) {
+    public static void addHoverImageInLabelEffect(JLabel label, String imagePath, double escala) {
 
         if (label.getWidth() == 0 || label.getHeight() == 0) {
-            SwingUtilities.invokeLater(() -> addHoverEffect(label, imagePath, escala));
+            SwingUtilities.invokeLater(() -> addHoverImageInLabelEffect(label, imagePath, escala));
             return;
         }
 
@@ -247,6 +249,39 @@ public class Utilidades extends javax.swing.JFrame {
                 label.repaint();
             }
         });
+    }
+
+    //Metodo [8] Ejecutar un archivo segun la ruta indicada. (incluido el archivo a ejecutar)
+    public static void ejecutar(String rutaArchvo) { //Recordar al pegar una ruta, cambar barras de \ a /
+        Runtime aplicacion = Runtime.getRuntime();
+        try {
+            aplicacion.exec(rutaArchvo);
+        } catch (Exception e) {
+            System.err.println("Error al ejecutar un archivo en: " + rutaArchvo);
+        }
+    }
+
+    //Sobrecarga [8] Se proporciona un JFrame para que se oculte mientras se ejecuta el programa indicado, luego se vuelve a mostrar el JFrame.    
+    public static void ejecutar(String rutaArchivo, JFrame mainWindow, Timer timer) {
+        try {
+            Process process = Runtime.getRuntime().exec(rutaArchivo);
+            mainWindow.setVisible(false);
+            timer.stop();
+
+            // hilo para esperar a que el proceso finalice y al acabar de esperar mostrar el JFrame de nuevo
+            new Thread(() -> {
+                try {
+                    process.waitFor();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                SwingUtilities.invokeLater(() -> mainWindow.setVisible(true));
+                SwingUtilities.invokeLater(() -> timer.restart());
+            }).start();
+        } catch (Exception e) {
+            System.err.println("Error al ejecutar el archivo en: " + rutaArchivo);
+            e.printStackTrace();
+        }
     }
 
 

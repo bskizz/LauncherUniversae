@@ -15,21 +15,23 @@ public class VistaGame extends javax.swing.JPanel {
     JSONObject jsonObj = new JSONObject(Utilidades.readTextFile("src/BBDD/BaseDeDatos.json"));
     JSONArray jsonGrados = jsonObj.getJSONArray("grados");
 
+    MainWindow mainWindow;
+    int escudoSeleccionado;
     private ArrayList<String> listaRutasImagenesCarrusel;
     private ArrayList<JLabel> listaLabelBolas = new ArrayList();
     int pos = 0; // posicion carrusel 0 -- 4
-    private int carruselSeleccionado; // 0 -- 5 (depende del boton que presionamos en la ventana home)
+    private int juegoSeleccionado; // 0 -- 5 (depende del boton que presionamos en la ventana home)
     private javax.swing.Timer timer;
 
-    public VistaGame(int carruselAMostrar) {
+    public VistaGame(int juegoSeleccionado, int escudoSeleccionado) {
         initComponents();
         listaLabelBolas = createLabelListBolas(imgBolaCarrusel0, imgBolaCarrusel1, imgBolaCarrusel2, imgBolaCarrusel3, imgBolaCarrusel4);
-        carruselSeleccionado = carruselAMostrar;
+        this.juegoSeleccionado = juegoSeleccionado;
+        this.escudoSeleccionado = escudoSeleccionado;
         actualizarCarrusel();
         rellenarBola(pos);
         iniciarCarruselAutomatico();
-        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createEmptyBorder());
-//para el borde de la descripcion, que desde modo grafico no se deshabilita
+        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createEmptyBorder());//para el borde de la descripcion, que desde modo grafico no se deshabilita
     }
 
     /**
@@ -75,6 +77,11 @@ public class VistaGame extends javax.swing.JPanel {
         imgComenzar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imgComenzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/launcheruniversae/img/PageCarruselGame/Comenzar.png"))); // NOI18N
         imgComenzar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        imgComenzar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgComenzarMouseClicked(evt);
+            }
+        });
         contenedorEmbDesembHelic.add(imgComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 740, 260, 50));
 
         imgMainCarrusel.setBackground(new java.awt.Color(51, 51, 51));
@@ -262,49 +269,41 @@ public class VistaGame extends javax.swing.JPanel {
     private void imgCarruselFondoDerechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgCarruselFondoDerechaMouseClicked
         pos += 1;
         actualizarCarrusel();
-        timer.restart();
     }//GEN-LAST:event_imgCarruselFondoDerechaMouseClicked
 
     private void botonDerechaCarruselMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonDerechaCarruselMouseClicked
         pos += 1;
         actualizarCarrusel();
-        timer.restart();
     }//GEN-LAST:event_botonDerechaCarruselMouseClicked
 
     private void imgCarruselFondoIzquierdaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgCarruselFondoIzquierdaMouseClicked
         pos -= 1;
         actualizarCarrusel();
-        timer.restart();
     }//GEN-LAST:event_imgCarruselFondoIzquierdaMouseClicked
 
     private void botonIzquierdaCarruselMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIzquierdaCarruselMouseClicked
         pos -= 1;
         actualizarCarrusel();
-        timer.restart();
     }//GEN-LAST:event_botonIzquierdaCarruselMouseClicked
 
     private void imgBolaCarrusel0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBolaCarrusel0MouseClicked
         pos = 0;
         actualizarCarrusel();
-        timer.restart();
     }//GEN-LAST:event_imgBolaCarrusel0MouseClicked
 
     private void imgBolaCarrusel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBolaCarrusel1MouseClicked
         pos = 1;
         actualizarCarrusel();
-        timer.restart();
     }//GEN-LAST:event_imgBolaCarrusel1MouseClicked
 
     private void imgBolaCarrusel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBolaCarrusel3MouseClicked
         pos = 3;
         actualizarCarrusel();
-        timer.restart();
     }//GEN-LAST:event_imgBolaCarrusel3MouseClicked
 
     private void imgBolaCarrusel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBolaCarrusel4MouseClicked
         pos = 4;
         actualizarCarrusel();
-        timer.restart();
     }//GEN-LAST:event_imgBolaCarrusel4MouseClicked
 
     private void imgBolaCarrusel2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imgBolaCarrusel2KeyPressed
@@ -314,7 +313,6 @@ public class VistaGame extends javax.swing.JPanel {
     private void imgBolaCarrusel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgBolaCarrusel2MouseClicked
         pos = 2;
         actualizarCarrusel();
-        timer.restart();
     }//GEN-LAST:event_imgBolaCarrusel2MouseClicked
 
     private void imgMainCarruselMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgMainCarruselMouseEntered
@@ -341,6 +339,16 @@ public class VistaGame extends javax.swing.JPanel {
         Utilidades.setLabelImage(botonIzquierdaCarrusel, "src/launcheruniversae/img/PageCarruselGame/Flecha izquierda.png", false, 0.7);
     }//GEN-LAST:event_botonIzquierdaCarruselMouseExited
 
+    private void imgComenzarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgComenzarMouseClicked
+        
+        java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor(this);
+
+        MainWindow main = (MainWindow) window;
+        main.setVisible(false);
+        Utilidades.ejecutar("C:/Users/vitu9/Documents/NetBeansProjects/LauncherUniversae/QuizDemo/QuizDemo.exe", main, timer); //el timer es para que no consuma recursos el carrusel automatico, deja de iterar mientras estamos usando el ejecutable
+
+    }//GEN-LAST:event_imgComenzarMouseClicked
+
     private void actualizarCarrusel() {
         crearListaRutasCarruselSeleccionado();
 
@@ -355,25 +363,24 @@ public class VistaGame extends javax.swing.JPanel {
             pos = 0;
         }
 
-        JSONObject primerGrado = jsonGrados.getJSONObject(pos);
+        JSONObject primerGrado = jsonGrados.getJSONObject(escudoSeleccionado);
         JSONArray juegos = primerGrado.getJSONArray("juegos");
-        JSONObject primerJuego = juegos.getJSONObject(carruselSeleccionado-1);
+        JSONObject primerJuego = juegos.getJSONObject(juegoSeleccionado - 1);
 
         String titulo = primerJuego.getString("titulo");
         String descripcion = primerJuego.getString("descripcion");
+
         String rutaImagen = listaRutasImagenesCarrusel.get(pos);
         Utilidades.setLabelImage(imgMainCarrusel, rutaImagen, true);
         labelTitulo.setText(titulo);
         txtDescripcion.setText(descripcion);
 
         rellenarBola(pos);
-
-        System.out.println("Mostrando imagen " + (pos + 1) + " de " + listaRutasImagenesCarrusel.size());
     }
 
     // Crea una lista con las rutas de las imagenes segun el juego que hayamos seleccionado
     private void crearListaRutasCarruselSeleccionado() {
-        switch (carruselSeleccionado) {
+        switch (juegoSeleccionado) {
             case 1:
                 listaRutasImagenesCarrusel = Utilidades.createStringList("src/launcheruniversae/img/PageCarruselGame/", "Embarque", ".png", 4);
                 break;
@@ -416,18 +423,25 @@ public class VistaGame extends javax.swing.JPanel {
         return list;
     }
 
+//    private void iniciarCarruselAutomatico() { //Por usar el metodo de executeAsync Utilidades
+//        Utilidades.executeAsync(3000, () -> {
+//            if (this.isShowing() && !carruselPausado) {
+//                pos++;
+//                javax.swing.SwingUtilities.invokeLater(() -> actualizarCarrusel());
+//            }
+//            if (this.isShowing() && !carruselPausado) {
+//                iniciarCarruselAutomatico();
+//            }
+//        });
+//    }
     private void iniciarCarruselAutomatico() {
-        int delay = 3000;
-        timer = new javax.swing.Timer(delay, e -> {
-            if (this.isShowing()) {
-                pos++;
-                actualizarCarrusel();
-            } else {
-                ((javax.swing.Timer) e.getSource()).stop();
-            }
+        timer = new javax.swing.Timer(3000, e -> {
+            pos++;
+            actualizarCarrusel();
         });
         timer.start();
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelIndiceImagenes;

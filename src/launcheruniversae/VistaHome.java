@@ -1,7 +1,5 @@
 package launcheruniversae;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 import utilidades.Utilidades;
 
 /**
@@ -11,6 +9,11 @@ import utilidades.Utilidades;
 public class VistaHome extends javax.swing.JPanel {
 
     VistaGame carrusel;
+    private int escudoSeleccionado = 0;
+
+    public void setEscudoSeleccionado(int escudoSeleccionado) {
+        this.escudoSeleccionado = escudoSeleccionado;
+    }
     
     public VistaHome() {
         initComponents();
@@ -143,32 +146,32 @@ public class VistaHome extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ico1_EmbDesemHelicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico1_EmbDesemHelicMouseClicked
-        carrusel = new VistaGame(1);
+        carrusel = new VistaGame(1, escudoSeleccionado);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico1_EmbDesemHelicMouseClicked
 
     private void ico2_ProtocoloHemorrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico2_ProtocoloHemorrMouseClicked
-        carrusel = new VistaGame(2);
+        carrusel = new VistaGame(2, escudoSeleccionado);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico2_ProtocoloHemorrMouseClicked
 
     private void ico3_ManiobrasExtincionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico3_ManiobrasExtincionMouseClicked
-        carrusel = new VistaGame(3);
+        carrusel = new VistaGame(3, escudoSeleccionado);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico3_ManiobrasExtincionMouseClicked
 
     private void ico4_EpisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico4_EpisMouseClicked
-        carrusel = new VistaGame(4);
+        carrusel = new VistaGame(4, escudoSeleccionado);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico4_EpisMouseClicked
 
     private void ico5_SeñalizacionHelicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico5_SeñalizacionHelicMouseClicked
-        carrusel = new VistaGame(5);
+        carrusel = new VistaGame(5, escudoSeleccionado);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico5_SeñalizacionHelicMouseClicked
 
     private void ico6_RescateAscensorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ico6_RescateAscensorMouseClicked
-        carrusel = new VistaGame(6);
+        carrusel = new VistaGame(6, escudoSeleccionado);
         Utilidades.showPanel(carrusel, contenedorPagianBotones);
     }//GEN-LAST:event_ico6_RescateAscensorMouseClicked
 
@@ -179,12 +182,12 @@ public class VistaHome extends javax.swing.JPanel {
         Utilidades.setLabelImage(ico4_Epis, "src/launcheruniversae/img/PageGame/Grado3.png", true, 0.9);
         Utilidades.setLabelImage(ico5_SeñalizacionHelic, "src/launcheruniversae/img/PageGame/Grado4.png", true, 0.9);
         Utilidades.setLabelImage(ico6_RescateAscensor, "src/launcheruniversae/img/PageGame/Grado5.png", true, 0.9);
-        Utilidades.addHoverEffect(ico1_EmbDesemHelic, "src/launcheruniversae/img/PageGame/Grado0.png", 0.9);
-        Utilidades.addHoverEffect(ico2_ProtocoloHemorr, "src/launcheruniversae/img/PageGame/Grado1.png", 0.9);
-        Utilidades.addHoverEffect(ico3_ManiobrasExtincion, "src/launcheruniversae/img/PageGame/Grado2.png", 0.9);
-        Utilidades.addHoverEffect(ico4_Epis, "src/launcheruniversae/img/PageGame/Grado3.png", 0.9);
-        Utilidades.addHoverEffect(ico5_SeñalizacionHelic, "src/launcheruniversae/img/PageGame/Grado4.png", 0.9);
-        Utilidades.addHoverEffect(ico6_RescateAscensor, "src/launcheruniversae/img/PageGame/Grado5.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(ico1_EmbDesemHelic, "src/launcheruniversae/img/PageGame/Grado0.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(ico2_ProtocoloHemorr, "src/launcheruniversae/img/PageGame/Grado1.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(ico3_ManiobrasExtincion, "src/launcheruniversae/img/PageGame/Grado2.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(ico4_Epis, "src/launcheruniversae/img/PageGame/Grado3.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(ico5_SeñalizacionHelic, "src/launcheruniversae/img/PageGame/Grado4.png", 0.9);
+        Utilidades.addHoverImageInLabelEffect(ico6_RescateAscensor, "src/launcheruniversae/img/PageGame/Grado5.png", 0.9);
     }
 
 
